@@ -1,2 +1,3 @@
-# cluster-diagnostic-templates
-Seq signals and dashboards for Seq cluster diagnostics.
+# Seq Cluster Diagnostic Templates
+
+A set of signals and dashboards for [cluster diagnostics](https://docs.datalust.co/docs/cluster-diagnostics).
