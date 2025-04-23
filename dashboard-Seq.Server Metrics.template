@@ -9,7 +9,7 @@
   "Charts": [
     {
       "Id": null,
-      "Title": "app_update_availability_check_elapsed",
+      "Title": "app_update_availability_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -43,7 +43,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the app update availability check task"
+      "Description": "Time elapsed running the app update availability check task."
     },
     {
       "Id": null,
@@ -85,7 +85,7 @@
     },
     {
       "Id": null,
-      "Title": "authentication_idle_session_cleanup_elapsed",
+      "Title": "authentication_idle_session_cleanup_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -119,11 +119,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the authentication idle session cleanup task"
+      "Description": "Time elapsed running the authentication idle session cleanup task."
     },
     {
       "Id": null,
-      "Title": "authentication_session_cleanup_elapsed",
+      "Title": "authentication_session_cleanup_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -157,11 +157,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the authentication session cleanup task"
+      "Description": "Time elapsed running the authentication session cleanup task."
     },
     {
       "Id": null,
-      "Title": "automatic_license_renewal_check_elapsed",
+      "Title": "automatic_license_renewal_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -195,7 +195,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the automatic license renewal check task"
+      "Description": "Time elapsed running the automatic license renewal check task."
     },
     {
       "Id": null,
@@ -245,7 +245,7 @@
     },
     {
       "Id": null,
-      "Title": "backup_check_elapsed",
+      "Title": "backup_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -279,11 +279,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the backup check task"
+      "Description": "Time elapsed running the backup check task."
     },
     {
       "Id": null,
-      "Title": "cancel_pending_queries_that_have_timed_out_elapsed",
+      "Title": "cancel_pending_queries_that_have_timed_out_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -317,11 +317,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the cancel pending queries that have timed out task"
+      "Description": "Time elapsed running the cancel pending queries that have timed out task."
     },
     {
       "Id": null,
-      "Title": "check_host_environment_features_elapsed",
+      "Title": "check_host_environment_features_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -355,11 +355,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the check host environment features task"
+      "Description": "Time elapsed running the check host environment features task."
     },
     {
       "Id": null,
-      "Title": "check_the_status_of_the_underlying_storage_engine_elapsed",
+      "Title": "check_the_status_of_the_underlying_storage_engine_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -393,11 +393,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the check the status of the underlying storage engine task"
+      "Description": "Time elapsed running the check the status of the underlying storage engine task."
     },
     {
       "Id": null,
-      "Title": "dispatch_system_notifications_elapsed",
+      "Title": "dispatch_system_notifications_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -431,7 +431,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the dispatch system notifications task"
+      "Description": "Time elapsed running the dispatch system notifications task."
     },
     {
       "Id": null,
@@ -473,7 +473,7 @@
     },
     {
       "Id": null,
-      "Title": "free_storage_space_monitor_elapsed",
+      "Title": "free_storage_space_monitor_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -507,11 +507,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the free storage space monitor task"
+      "Description": "Time elapsed running the free storage space monitor task."
     },
     {
       "Id": null,
-      "Title": "indexing_elapsed",
+      "Title": "indexing_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -545,7 +545,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the indexing task"
+      "Description": "Time elapsed running the indexing task."
     },
     {
       "Id": null,
@@ -709,7 +709,7 @@
     },
     {
       "Id": null,
-      "Title": "license_status_check_elapsed",
+      "Title": "license_status_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -743,11 +743,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the license status check task"
+      "Description": "Time elapsed running the license status check task."
     },
     {
       "Id": null,
-      "Title": "metrics_log_exporter_elapsed",
+      "Title": "metrics_log_exporter_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -781,11 +781,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the metrics log exporter task"
+      "Description": "Time elapsed running the metrics log exporter task."
     },
     {
       "Id": null,
-      "Title": "metrics_otlp_exporter_elapsed",
+      "Title": "metrics_otlp_exporter_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -819,7 +819,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the metrics OTLP exporter task"
+      "Description": "Time elapsed running the metrics OTLP exporter task."
     },
     {
       "Id": null,
@@ -907,7 +907,7 @@
     },
     {
       "Id": null,
-      "Title": "sample_cluster_node_metrics_elapsed",
+      "Title": "sample_cluster_node_metrics_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -941,11 +941,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the sample cluster node metrics task"
+      "Description": "Time elapsed running the sample cluster node metrics task."
     },
     {
       "Id": null,
-      "Title": "scan_for_quarantined_files_elapsed",
+      "Title": "scan_for_quarantined_files_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -979,11 +979,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the scan for quarantined files task"
+      "Description": "Time elapsed running the scan for quarantined files task."
     },
     {
       "Id": null,
-      "Title": "seq_update_availability_check_elapsed",
+      "Title": "seq_update_availability_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -1017,11 +1017,11 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the Seq update availability check task"
+      "Description": "Time elapsed running the Seq update availability check task."
     },
     {
       "Id": null,
-      "Title": "storage_maintenance_elapsed",
+      "Title": "storage_maintenance_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
@@ -1055,7 +1055,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Time elapsed running the storage maintenance task"
+      "Description": "Time elapsed running the storage maintenance task."
     },
     {
       "Id": null,
