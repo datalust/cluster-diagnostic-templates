@@ -9,6 +9,44 @@
   "Charts": [
     {
       "Id": null,
+      "Title": "app_update_availability_check_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(app_update_availability_check_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "app_update_availability_check_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the app update availability check task"
+    },
+    {
+      "Id": null,
       "Title": "arrived_events",
       "SignalExpression": null,
       "Queries": [
@@ -44,6 +82,120 @@
         "HeightRows": 1
       },
       "Description": "The number of events arrived at an ingestion endpoint. These include only valid/authorized payloads, prior to any ingestion rules/filters being applied."
+    },
+    {
+      "Id": null,
+      "Title": "authentication_idle_session_cleanup_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(authentication_idle_session_cleanup_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "authentication_idle_session_cleanup_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the authentication idle session cleanup task"
+    },
+    {
+      "Id": null,
+      "Title": "authentication_session_cleanup_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(authentication_session_cleanup_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "authentication_session_cleanup_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the authentication session cleanup task"
+    },
+    {
+      "Id": null,
+      "Title": "automatic_license_renewal_check_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(automatic_license_renewal_check_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "automatic_license_renewal_check_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the automatic license renewal check task"
     },
     {
       "Id": null,
@@ -93,6 +245,196 @@
     },
     {
       "Id": null,
+      "Title": "backup_check_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(backup_check_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "backup_check_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the backup check task"
+    },
+    {
+      "Id": null,
+      "Title": "cancel_pending_queries_that_have_timed_out_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(cancel_pending_queries_that_have_timed_out_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "cancel_pending_queries_that_have_timed_out_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the cancel pending queries that have timed out task"
+    },
+    {
+      "Id": null,
+      "Title": "check_host_environment_features_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(check_host_environment_features_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "check_host_environment_features_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the check host environment features task"
+    },
+    {
+      "Id": null,
+      "Title": "check_the_status_of_the_underlying_storage_engine_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(check_the_status_of_the_underlying_storage_engine_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "check_the_status_of_the_underlying_storage_engine_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the check the status of the underlying storage engine task"
+    },
+    {
+      "Id": null,
+      "Title": "dispatch_system_notifications_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(dispatch_system_notifications_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "dispatch_system_notifications_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the dispatch system notifications task"
+    },
+    {
+      "Id": null,
       "Title": "failed_otlp_metric_exports",
       "SignalExpression": null,
       "Queries": [
@@ -128,6 +470,82 @@
         "HeightRows": 1
       },
       "Description": "The number of failed attempts to export Seq metrics via OTLP."
+    },
+    {
+      "Id": null,
+      "Title": "free_storage_space_monitor_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(free_storage_space_monitor_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "free_storage_space_monitor_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the free storage space monitor task"
+    },
+    {
+      "Id": null,
+      "Title": "indexing_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(indexing_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "indexing_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the indexing task"
     },
     {
       "Id": null,
@@ -291,6 +709,120 @@
     },
     {
       "Id": null,
+      "Title": "license_status_check_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(license_status_check_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "license_status_check_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the license status check task"
+    },
+    {
+      "Id": null,
+      "Title": "metrics_log_exporter_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(metrics_log_exporter_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "metrics_log_exporter_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the metrics log exporter task"
+    },
+    {
+      "Id": null,
+      "Title": "metrics_otlp_exporter_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(metrics_otlp_exporter_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "metrics_otlp_exporter_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the metrics OTLP exporter task"
+    },
+    {
+      "Id": null,
       "Title": "query_canceled",
       "SignalExpression": null,
       "Queries": [
@@ -372,6 +904,158 @@
         "HeightRows": 1
       },
       "Description": "The number of active requests being processed by the HTTP query endpoint."
+    },
+    {
+      "Id": null,
+      "Title": "sample_cluster_node_metrics_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(sample_cluster_node_metrics_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "sample_cluster_node_metrics_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the sample cluster node metrics task"
+    },
+    {
+      "Id": null,
+      "Title": "scan_for_quarantined_files_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(scan_for_quarantined_files_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "scan_for_quarantined_files_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the scan for quarantined files task"
+    },
+    {
+      "Id": null,
+      "Title": "seq_update_availability_check_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(seq_update_availability_check_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "seq_update_availability_check_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the Seq update availability check task"
+    },
+    {
+      "Id": null,
+      "Title": "storage_maintenance_elapsed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(storage_maintenance_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "storage_maintenance_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the storage maintenance task"
     },
     {
       "Id": null,
