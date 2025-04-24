@@ -123,6 +123,52 @@
     },
     {
       "Id": null,
+      "Title": "cluster_io_pool_threads",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "min(cluster_io_pool_threads)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(cluster_io_pool_threads)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(cluster_io_pool_threads)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "cluster_io_pool_threads is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of IO threads in the cluster thread pool."
+    },
+    {
+      "Id": null,
       "Title": "coalesced_gen0",
       "SignalExpression": null,
       "Queries": [
@@ -1453,6 +1499,44 @@
     },
     {
       "Id": null,
+      "Title": "follow_transaction_dirty_complete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(follow_transaction_dirty_complete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "follow_transaction_dirty_complete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A `FollowTransaction` was dropped without being explicitly completed."
+    },
+    {
+      "Id": null,
       "Title": "index_create",
       "SignalExpression": null,
       "Queries": [
@@ -2639,6 +2723,52 @@
     },
     {
       "Id": null,
+      "Title": "job_pile_allowed_concurrent_active_jobs",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "min(job_pile_allowed_concurrent_active_jobs)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(job_pile_allowed_concurrent_active_jobs)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(job_pile_allowed_concurrent_active_jobs)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "job_pile_allowed_concurrent_active_jobs is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of concurrent active jobs."
+    },
+    {
+      "Id": null,
       "Title": "job_start",
       "SignalExpression": null,
       "Queries": [
@@ -2677,52 +2807,6 @@
     },
     {
       "Id": null,
-      "Title": "jobs_active_apprx",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "min(jobs_active_apprx)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(jobs_active_apprx)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(jobs_active_apprx)",
-              "Label": "mean"
-            }
-          ],
-          "Where": "jobs_active_apprx is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The approximate count of running jobs. This is not always fresh."
-    },
-    {
-      "Id": null,
       "Title": "jobs_vertex_scheduled",
       "SignalExpression": null,
       "Queries": [
@@ -2758,52 +2842,6 @@
         "HeightRows": 1
       },
       "Description": "A runnable vertex was found."
-    },
-    {
-      "Id": null,
-      "Title": "jobs_waiting_apprx",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "min(jobs_waiting_apprx)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(jobs_waiting_apprx)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(jobs_waiting_apprx)",
-              "Label": "mean"
-            }
-          ],
-          "Where": "jobs_waiting_apprx is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The approximate count of jobs enqueued but not yet started. This is not always fresh."
     },
     {
       "Id": null,
@@ -3254,6 +3292,52 @@
         "HeightRows": 1
       },
       "Description": "A maintenance transaction was dropped without being cleanly completed (`kernel::maintenance`)."
+    },
+    {
+      "Id": null,
+      "Title": "managed_thread_pool_threads",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "min(managed_thread_pool_threads)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(managed_thread_pool_threads)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(managed_thread_pool_threads)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "managed_thread_pool_threads is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of managed threads in the thread pool."
     },
     {
       "Id": null,
@@ -5759,6 +5843,272 @@
     },
     {
       "Id": null,
+      "Title": "replication_apply_index_set_delete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_index_set_delete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_index_set_delete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication deleted an index set."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_index_set_write_bytes",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_index_set_write_bytes)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_index_set_write_bytes is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication wrote to an index set."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_ingest_buf_delete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_ingest_buf_delete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_ingest_buf_delete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication deleted an ingest buffer."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_ingest_buf_write_bytes",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_ingest_buf_write_bytes)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_ingest_buf_write_bytes is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication wrote to an ingest buffer."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_stable_span_delete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_stable_span_delete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_stable_span_delete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication deleted a stable span."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_stable_span_update_metadata",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_stable_span_update_metadata)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_stable_span_update_metadata is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication updated metadata for a stable span."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_stable_span_write_bytes",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_stable_span_write_bytes)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_stable_span_write_bytes is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication wrote to a stable span."
+    },
+    {
+      "Id": null,
       "Title": "replication_full_sync",
       "SignalExpression": null,
       "Queries": [
@@ -6190,6 +6540,204 @@
         "HeightRows": 1
       },
       "Description": "The number of rowsets currently in the rowset cache."
+    },
+    {
+      "Id": null,
+      "Title": "snapshots_client_exchange_firehose",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(snapshots_client_exchange_firehose)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "snapshots_client_exchange_firehose is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The snapshots client attempted a fast exchange."
+    },
+    {
+      "Id": null,
+      "Title": "snapshots_client_exchange_request_response",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(snapshots_client_exchange_request_response)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "snapshots_client_exchange_request_response is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The snapshots client attempted an incremental exchange."
+    },
+    {
+      "Id": null,
+      "Title": "snapshots_compression_percentage",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "min(snapshots_compression_percentage)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(snapshots_compression_percentage)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(snapshots_compression_percentage)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "snapshots_compression_percentage is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The ratio of compressed to uncompressed snapshots data, where values above 100 indicate higher levels of compression."
+    },
+    {
+      "Id": null,
+      "Title": "snapshots_server_exchange_firehose",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(snapshots_server_exchange_firehose)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "snapshots_server_exchange_firehose is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The snapshots server attempted a fast exchange."
+    },
+    {
+      "Id": null,
+      "Title": "snapshots_server_exchange_request_response",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "Measurements": [
+            {
+              "Value": "sum(snapshots_server_exchange_request_response)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "snapshots_server_exchange_request_response is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The snapshots server attempted an incremental exchange."
     },
     {
       "Id": null,
