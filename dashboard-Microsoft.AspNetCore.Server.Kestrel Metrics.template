@@ -3,16 +3,13 @@
   "OwnerId": null,
   "Title": "Microsoft.AspNetCore.Server.Kestrel Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
   "Charts": [
     {
       "Title": "kestrel.active_connections",
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.active_connections)",
@@ -55,6 +52,7 @@
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.active_tls_handshakes)",
@@ -97,6 +95,7 @@
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.queued_connections)",
@@ -139,6 +138,7 @@
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.queued_requests)",
@@ -181,6 +181,7 @@
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.rejected_connections)",
@@ -223,6 +224,7 @@
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(kestrel.upgraded_connections)",

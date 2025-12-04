@@ -2,10 +2,7 @@
   "OwnerId": null,
   "Title": "Seq.Host Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
+  "SignalExpression": null,
   "Charts": [
     {
       "Id": null,
@@ -14,6 +11,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_gc_memory_fragmented)",
@@ -60,6 +58,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_gc_memory_total)",
@@ -106,6 +105,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_gc_memory_used)",
@@ -152,6 +152,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_gc_pause_time)",
@@ -198,6 +199,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_thread_pool_current_threads)",
@@ -244,6 +246,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_thread_pool_iocp_threads_available)",
@@ -290,6 +293,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(dotnet_thread_pool_threads_available)",
@@ -336,6 +340,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(free_disk_space)",
@@ -382,6 +387,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_cpu_current)",
@@ -428,6 +434,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_handles)",
@@ -474,6 +481,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_non_paged)",
@@ -520,6 +528,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_paged)",
@@ -566,6 +575,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_physical)",
@@ -612,6 +622,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_private)",
@@ -658,6 +669,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_system_non_paged)",
@@ -704,6 +716,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_system_paged)",
@@ -750,6 +763,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_memory_virtual)",
@@ -796,6 +810,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_threads)",
@@ -842,6 +857,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(process_uptime)",
@@ -888,6 +904,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(system_memory_utilized)",

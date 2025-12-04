@@ -2,10 +2,7 @@
   "OwnerId": null,
   "Title": "Seq.Task Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
+  "SignalExpression": null,
   "Charts": [
     {
       "Id": null,
@@ -14,6 +11,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(app_update_availability_check_elapsed)",
@@ -52,6 +50,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(authentication_idle_session_cleanup_elapsed)",
@@ -90,6 +89,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(authentication_session_cleanup_elapsed)",
@@ -128,6 +128,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(automatic_license_renewal_check_elapsed)",
@@ -166,6 +167,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(backup_check_elapsed)",
@@ -199,49 +201,12 @@
     },
     {
       "Id": null,
-      "Title": "cancel_pending_queries_that_have_timed_out_elapsed (ms)",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(cancel_pending_queries_that_have_timed_out_elapsed)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "cancel_pending_queries_that_have_timed_out_elapsed is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "Time elapsed running the cancel pending queries that have timed out task."
-    },
-    {
-      "Id": null,
       "Title": "check_host_environment_features_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(check_host_environment_features_elapsed)",
@@ -280,6 +245,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(check_the_status_of_the_underlying_storage_engine_elapsed)",
@@ -318,6 +284,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(dispatch_system_notifications_elapsed)",
@@ -356,6 +323,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(free_storage_space_monitor_elapsed)",
@@ -394,6 +362,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexing_elapsed)",
@@ -427,11 +396,51 @@
     },
     {
       "Id": null,
+      "Title": "junk_file_detector_elapsed (ms)",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(junk_file_detector_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "junk_file_detector_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the junk file detector task."
+    },
+    {
+      "Id": null,
       "Title": "license_status_check_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(license_status_check_elapsed)",
@@ -470,6 +479,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(metrics_log_exporter_elapsed)",
@@ -508,6 +518,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(metrics_otlp_exporter_elapsed)",
@@ -541,11 +552,51 @@
     },
     {
       "Id": null,
+      "Title": "run_garbage_collection_on_native_storage_objects_elapsed (ms)",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(run_garbage_collection_on_native_storage_objects_elapsed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "run_garbage_collection_on_native_storage_objects_elapsed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Time elapsed running the run garbage collection on native storage objects task."
+    },
+    {
+      "Id": null,
       "Title": "sample_cluster_node_metrics_elapsed (ms)",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(sample_cluster_node_metrics_elapsed)",
@@ -584,6 +635,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(scan_for_quarantined_files_elapsed)",
@@ -622,6 +674,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(seq_update_availability_check_elapsed)",
@@ -660,6 +713,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(storage_maintenance_elapsed)",

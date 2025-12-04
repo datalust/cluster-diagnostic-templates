@@ -2,10 +2,7 @@
   "OwnerId": null,
   "Title": "Seq.Engine Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
+  "SignalExpression": null,
   "Charts": [
     {
       "Id": null,
@@ -14,6 +11,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(broadcast_channel_input_queue_batches)",
@@ -60,6 +58,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(broadcast_channel_subscriptions)",
@@ -106,6 +105,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(data_store_queries)",
@@ -144,6 +144,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexing_time)",
@@ -182,6 +183,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(indexing_time_last_day)",
@@ -228,6 +230,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(write_time)",
@@ -266,6 +269,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(write_time_last_day)",

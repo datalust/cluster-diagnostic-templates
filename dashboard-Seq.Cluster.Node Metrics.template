@@ -2,10 +2,7 @@
   "OwnerId": null,
   "Title": "Seq.Cluster.Node Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
+  "SignalExpression": null,
   "Charts": [
     {
       "Id": null,
@@ -14,6 +11,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_candidate)",
@@ -52,6 +50,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_follower)",
@@ -90,6 +89,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_leader)",
@@ -128,6 +128,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_offline)",
@@ -166,6 +167,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_stopping)",
@@ -204,6 +206,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(became_suspended)",
@@ -242,6 +245,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(cluster_member_count)",
@@ -288,6 +292,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(cumulative_heartbeat_time)",
@@ -326,6 +331,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(fresh_cluster_member_count)",
@@ -372,6 +378,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(heartbeat_error)",
@@ -410,6 +417,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(heartbeat_success)",
@@ -448,6 +456,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(leader_identified)",
@@ -486,6 +495,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(leadership_lease_obtained)",
@@ -524,6 +534,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(membership_cleaned)",
@@ -562,6 +573,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(membership_table_size)",
@@ -608,6 +620,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(reactivated)",
@@ -646,6 +659,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(replicated_data_age)",
@@ -692,6 +706,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(up_to_date_cluster_member_count)",
@@ -738,6 +753,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vacancy_observed)",

@@ -3,16 +3,13 @@
   "OwnerId": null,
   "Title": "Microsoft.AspNetCore.Hosting Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
   "Charts": [
     {
       "Title": "http.server.active_requests",
       "SignalExpression": null,
       "Queries": [
         {
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(http.server.active_requests)",

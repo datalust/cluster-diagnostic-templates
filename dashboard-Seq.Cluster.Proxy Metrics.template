@@ -1,0 +1,322 @@
+{
+  "OwnerId": null,
+  "Title": "Seq.Cluster.Proxy Metrics",
+  "IsProtected": false,
+  "SignalExpression": null,
+  "Charts": [
+    {
+      "Id": null,
+      "Title": "active_requests",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "min(active_requests)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(active_requests)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(active_requests)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "active_requests is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of requests currently being processed."
+    },
+    {
+      "Id": null,
+      "Title": "open_outbound_http11_connections",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "min(open_outbound_http11_connections)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(open_outbound_http11_connections)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(open_outbound_http11_connections)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "open_outbound_http11_connections is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of open HTTP 1.1 connections to target servers."
+    },
+    {
+      "Id": null,
+      "Title": "open_outbound_http20_connections",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "min(open_outbound_http20_connections)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(open_outbound_http20_connections)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(open_outbound_http20_connections)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "open_outbound_http20_connections is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of open HTTP 2.0 connections to target servers."
+    },
+    {
+      "Id": null,
+      "Title": "outbound_http11_request_queue_duration (ms)",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "min(outbound_http11_request_queue_duration)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(outbound_http11_request_queue_duration)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(outbound_http11_request_queue_duration)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "outbound_http11_request_queue_duration is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The current time outbound HTTP 1.1 requests are waiting for a connection to become available."
+    },
+    {
+      "Id": null,
+      "Title": "outbound_http20_request_queue_duration (ms)",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "min(outbound_http20_request_queue_duration)",
+              "Label": "min"
+            },
+            {
+              "Value": "max(outbound_http20_request_queue_duration)",
+              "Label": "max"
+            },
+            {
+              "Value": "mean(outbound_http20_request_queue_duration)",
+              "Label": "mean"
+            }
+          ],
+          "Where": "outbound_http20_request_queue_duration is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": false,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The current time outbound HTTP 2.0 requests are waiting for a connection to become available."
+    },
+    {
+      "Id": null,
+      "Title": "requests_failed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(requests_failed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "requests_failed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Reds"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of proxied requests that have failed."
+    },
+    {
+      "Id": null,
+      "Title": "requests_started",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(requests_started)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "requests_started is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of requests started through the proxy."
+    }
+  ],
+  "$entity": "dashboard"
+}

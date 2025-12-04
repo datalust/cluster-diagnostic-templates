@@ -2,10 +2,7 @@
   "OwnerId": null,
   "Title": "Seq.Storage.Native Metrics",
   "IsProtected": false,
-  "SignalExpression": {
-    "Kind": "Signal",
-    "SignalId": ref("signal-Metrics.template")
-  },
+  "SignalExpression": null,
   "Charts": [
     {
       "Id": null,
@@ -14,6 +11,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(abi_internal_error)",
@@ -52,6 +50,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(abi_io_error)",
@@ -90,6 +89,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(abi_panic)",
@@ -128,6 +128,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(cluster_io_pool_threads)",
@@ -174,6 +175,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(coalesced_gen0)",
@@ -212,6 +214,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(coalesced_gen0_ingest_buf)",
@@ -250,6 +253,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(coalesced_gen1)",
@@ -288,6 +292,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(coalesced_gen1_ingest_buf)",
@@ -321,11 +326,363 @@
     },
     {
       "Id": null,
+      "Title": "column_span_create",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(column_span_create)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "column_span_create is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A complete stable span was built (`ColumnSpanBuilder::complete()`)."
+    },
+    {
+      "Id": null,
+      "Title": "column_span_quarantine",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(column_span_quarantine)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "column_span_quarantine is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A stable span was quarantined."
+    },
+    {
+      "Id": null,
+      "Title": "column_span_read",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(column_span_read)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "column_span_read is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A stable span read operation began (`ColumnSpanReader::begin()`)."
+    },
+    {
+      "Id": null,
+      "Title": "column_span_remove",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(column_span_remove)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "column_span_remove is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A stable span file was removed (`Kernel::execute()`)."
+    },
+    {
+      "Id": null,
+      "Title": "column_unrecognized_path",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(column_unrecognized_path)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "column_unrecognized_path is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A column with prefix `usr` is present in the byte store, but its segments could not be\n     interpreted as a valid column path."
+    },
+    {
+      "Id": null,
+      "Title": "columns_dedup_false_positive",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(columns_dedup_false_positive)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "columns_dedup_false_positive is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Tracks the number of expensive failed equality comparisons we perform in presence stream deduping."
+    },
+    {
+      "Id": null,
+      "Title": "columns_dedup_reused_bytes",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(columns_dedup_reused_bytes)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "columns_dedup_reused_bytes is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "Tracks the size of the of successful presence stream deduplications we perform."
+    },
+    {
+      "Id": null,
+      "Title": "dataflow_materialize",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(dataflow_materialize)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "dataflow_materialize is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A dataflow was constructed."
+    },
+    {
+      "Id": null,
+      "Title": "dataflow_vertex_materialize",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(dataflow_vertex_materialize)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "dataflow_vertex_materialize is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A dataflow vertex was materialized."
+    },
+    {
+      "Id": null,
       "Title": "deleter_abandon",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_abandon)",
@@ -364,6 +721,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_begin)",
@@ -402,6 +760,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_complete)",
@@ -435,18 +794,19 @@
     },
     {
       "Id": null,
-      "Title": "deleter_exclude_event",
+      "Title": "deleter_exclude_record",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(deleter_exclude_event)",
+              "Value": "sum(deleter_exclude_record)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "deleter_exclude_event is not null",
+          "Where": "deleter_exclude_record is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -478,6 +838,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_ingest_buf_create)",
@@ -516,6 +877,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_ingest_buf_remove)",
@@ -554,6 +916,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_region_all_retained)",
@@ -592,6 +955,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_region_truncate)",
@@ -630,6 +994,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_stable_span_corrupted_index_set)",
@@ -668,6 +1033,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_stable_span_create)",
@@ -706,6 +1072,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_stable_span_no_index_set)",
@@ -744,6 +1111,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_stable_span_remove)",
@@ -782,6 +1150,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(deleter_stable_span_skip)",
@@ -815,18 +1184,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_checkpoint",
+      "Title": "doccoll_checkpoint",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_checkpoint)",
+              "Value": "sum(doccoll_checkpoint)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_checkpoint is not null",
+          "Where": "doccoll_checkpoint is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -853,18 +1223,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_create",
+      "Title": "doccoll_create",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_create)",
+              "Value": "sum(doccoll_create)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_create is not null",
+          "Where": "doccoll_create is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -891,18 +1262,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_kvs_remove",
+      "Title": "doccoll_kvs_remove",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_kvs_remove)",
+              "Value": "sum(doccoll_kvs_remove)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_kvs_remove is not null",
+          "Where": "doccoll_kvs_remove is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -929,18 +1301,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_read_begin",
+      "Title": "doccoll_read_begin",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_read_begin)",
+              "Value": "sum(doccoll_read_begin)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_read_begin is not null",
+          "Where": "doccoll_read_begin is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -967,18 +1340,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_read_complete",
+      "Title": "doccoll_read_complete",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_read_complete)",
+              "Value": "sum(doccoll_read_complete)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_read_complete is not null",
+          "Where": "doccoll_read_complete is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1005,18 +1379,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_remove",
+      "Title": "doccoll_remove",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_remove)",
+              "Value": "sum(doccoll_remove)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_remove is not null",
+          "Where": "doccoll_remove is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1043,18 +1418,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_write_abort",
+      "Title": "doccoll_write_abort",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_write_abort)",
+              "Value": "sum(doccoll_write_abort)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_write_abort is not null",
+          "Where": "doccoll_write_abort is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1081,18 +1457,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_write_begin",
+      "Title": "doccoll_write_begin",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_write_begin)",
+              "Value": "sum(doccoll_write_begin)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_write_begin is not null",
+          "Where": "doccoll_write_begin is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1119,18 +1496,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_write_commit",
+      "Title": "doccoll_write_commit",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_write_commit)",
+              "Value": "sum(doccoll_write_commit)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_write_commit is not null",
+          "Where": "doccoll_write_commit is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1157,18 +1535,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_write_record_delete",
+      "Title": "doccoll_write_record_delete",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_write_record_delete)",
+              "Value": "sum(doccoll_write_record_delete)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_write_record_delete is not null",
+          "Where": "doccoll_write_record_delete is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1195,18 +1574,19 @@
     },
     {
       "Id": null,
-      "Title": "doc_coll_write_record_set",
+      "Title": "doccoll_write_record_set",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(doc_coll_write_record_set)",
+              "Value": "sum(doccoll_write_record_set)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "doc_coll_write_record_set is not null",
+          "Where": "doccoll_write_record_set is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1233,87 +1613,12 @@
     },
     {
       "Id": null,
-      "Title": "edges_client_err",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(edges_client_err)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "edges_client_err is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "An edge protocol connection to a remote client terminated with an error."
-    },
-    {
-      "Id": null,
-      "Title": "edges_client_panic",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(edges_client_panic)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "edges_client_panic is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Reds"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "An edge protocol connection to a remote client panicked."
-    },
-    {
-      "Id": null,
       "Title": "edges_done_receive",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(edges_done_receive)",
@@ -1352,6 +1657,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(edges_done_send)",
@@ -1390,6 +1696,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(edges_row_receive)",
@@ -1428,6 +1735,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(edges_row_send)",
@@ -1461,18 +1769,19 @@
     },
     {
       "Id": null,
-      "Title": "edges_server_late_incoming_edge",
+      "Title": "follow_transaction_begin",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(edges_server_late_incoming_edge)",
+              "Value": "sum(follow_transaction_begin)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "edges_server_late_incoming_edge is not null",
+          "Where": "follow_transaction_begin is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -1495,7 +1804,46 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "Rows were received for a vertex that has not yet started executing. This causes the\n      connection for the sending node to stall."
+      "Description": "A `FollowTransaction` was created."
+    },
+    {
+      "Id": null,
+      "Title": "follow_transaction_complete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(follow_transaction_complete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "follow_transaction_complete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A `FollowTransaction` was completed."
     },
     {
       "Id": null,
@@ -1504,6 +1852,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(follow_transaction_dirty_complete)",
@@ -1542,6 +1891,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_create)",
@@ -1580,6 +1930,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_load_failed_unknown_kind)",
@@ -1618,6 +1969,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_load_failed_unsupported_kind)",
@@ -1656,6 +2008,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_set_create)",
@@ -1685,7 +2038,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "An index set file was created (`index_set::file`)."
+      "Description": "An index set file was created (`bin_set::file`)."
     },
     {
       "Id": null,
@@ -1694,6 +2047,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_set_load)",
@@ -1723,7 +2077,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "An index set file was loaded (`index_set::file`)."
+      "Description": "An index set file was loaded (`bin_set::file`)."
     },
     {
       "Id": null,
@@ -1732,6 +2086,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_set_lookup_failed)",
@@ -1770,6 +2125,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_set_lookup_no_index)",
@@ -1808,6 +2164,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_set_remove)",
@@ -1846,6 +2203,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_store_invalid_definition)",
@@ -1884,6 +2242,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_store_invalid_definition_invalid_expr)",
@@ -1922,6 +2281,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_store_invalid_definition_unknown_encoding)",
@@ -1960,6 +2320,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(index_store_invalid_definition_unknown_kind)",
@@ -1998,6 +2359,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_abort)",
@@ -2036,6 +2398,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_begin_new)",
@@ -2074,6 +2437,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_begin_outdated)",
@@ -2112,6 +2476,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_commit)",
@@ -2150,6 +2515,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_execute_outdated)",
@@ -2183,11 +2549,129 @@
     },
     {
       "Id": null,
+      "Title": "indexer_execute_parallel",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(indexer_execute_parallel)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "indexer_execute_parallel is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The executor ran indexing in parallel."
+    },
+    {
+      "Id": null,
+      "Title": "indexer_execute_parallel_partition",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(indexer_execute_parallel_partition)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "indexer_execute_parallel_partition is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The executor ran an indexing partition."
+    },
+    {
+      "Id": null,
+      "Title": "indexer_execute_serial",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(indexer_execute_serial)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "indexer_execute_serial is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The executor ran indexing serially."
+    },
+    {
+      "Id": null,
       "Title": "indexer_execute_unindexed",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_execute_unindexed)",
@@ -2226,6 +2710,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(indexer_execute_up_to_date)",
@@ -2264,6 +2749,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(indexer_invalid_definitions_last_update)",
@@ -2305,18 +2791,19 @@
     },
     {
       "Id": null,
-      "Title": "indexer_partition",
+      "Title": "indexer_merge",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(indexer_partition)",
+              "Value": "sum(indexer_merge)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "indexer_partition is not null",
+          "Where": "indexer_merge is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2339,22 +2826,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The indexer was partitioned (`store::indexer`)."
+      "Description": "The indexer merged a partition (`store::indexer`)."
     },
     {
       "Id": null,
-      "Title": "indexer_partition_abort",
+      "Title": "indexer_partition_begin",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(indexer_partition_abort)",
+              "Value": "sum(indexer_partition_begin)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "indexer_partition_abort is not null",
+          "Where": "indexer_partition_begin is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2377,22 +2865,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "An indexer partition abandoned indexing a stable span (`store::indexer`)."
+      "Description": "A partition of an indexer was created (`store::indexer`)."
     },
     {
       "Id": null,
-      "Title": "indexer_partition_commit",
+      "Title": "indexer_partition_complete",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(indexer_partition_commit)",
+              "Value": "sum(indexer_partition_complete)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "indexer_partition_commit is not null",
+          "Where": "indexer_partition_complete is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2424,6 +2913,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(ingest_buf_create)",
@@ -2462,6 +2952,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(ingest_buf_quarantine)",
@@ -2500,6 +2991,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(ingest_buf_read)",
@@ -2538,6 +3030,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(ingest_buf_read_truncated)",
@@ -2576,6 +3069,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(ingest_buf_remove)",
@@ -2609,18 +3103,19 @@
     },
     {
       "Id": null,
-      "Title": "ingest_buf_write_event",
+      "Title": "ingest_buf_write_record",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(ingest_buf_write_event)",
+              "Value": "sum(ingest_buf_write_record)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "ingest_buf_write_event is not null",
+          "Where": "ingest_buf_write_record is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2652,6 +3147,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(job_complete)",
@@ -2690,6 +3186,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(job_enqueue)",
@@ -2728,6 +3225,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(job_pile_allowed_concurrent_active_jobs)",
@@ -2774,6 +3272,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(job_start)",
@@ -2807,18 +3306,58 @@
     },
     {
       "Id": null,
-      "Title": "jobs_vertex_scheduled",
+      "Title": "job_timeout_in_queue",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(jobs_vertex_scheduled)",
+              "Value": "sum(job_timeout_in_queue)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "jobs_vertex_scheduled is not null",
+          "Where": "job_timeout_in_queue is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A job timed out before it could start."
+    },
+    {
+      "Id": null,
+      "Title": "job_vertex_scheduled",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(job_vertex_scheduled)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "job_vertex_scheduled is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2850,6 +3389,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(json_de_invalid)",
@@ -2883,26 +3423,19 @@
     },
     {
       "Id": null,
-      "Title": "kernel_mvcc_next_data_generation",
+      "Title": "kernel_maintenance_lock_acquired",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "min(kernel_mvcc_next_data_generation)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(kernel_mvcc_next_data_generation)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(kernel_mvcc_next_data_generation)",
-              "Label": "mean"
+              "Value": "sum(kernel_maintenance_lock_acquired)",
+              "Label": "sum_of_deltas"
             }
           ],
-          "Where": "kernel_mvcc_next_data_generation is not null",
+          "Where": "kernel_maintenance_lock_acquired is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2911,7 +3444,7 @@
             "Type": "Line",
             "LineFillToZeroY": true,
             "LineShowMarkers": false,
-            "BarOverlaySum": false,
+            "BarOverlaySum": true,
             "UseLogarithmicScale": false,
             "SuppressLegend": true,
             "Palette": "Default"
@@ -2925,30 +3458,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The kernel's generational data model advanced."
+      "Description": "The number of times the maintenance lock was acquired."
     },
     {
       "Id": null,
-      "Title": "kernel_mvcc_next_write_generation",
+      "Title": "kernel_maintenance_lock_released",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "min(kernel_mvcc_next_write_generation)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(kernel_mvcc_next_write_generation)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(kernel_mvcc_next_write_generation)",
-              "Label": "mean"
+              "Value": "sum(kernel_maintenance_lock_released)",
+              "Label": "sum_of_deltas"
             }
           ],
-          "Where": "kernel_mvcc_next_write_generation is not null",
+          "Where": "kernel_maintenance_lock_released is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -2957,7 +3483,7 @@
             "Type": "Line",
             "LineFillToZeroY": true,
             "LineShowMarkers": false,
-            "BarOverlaySum": false,
+            "BarOverlaySum": true,
             "UseLogarithmicScale": false,
             "SuppressLegend": true,
             "Palette": "Default"
@@ -2971,30 +3497,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The kernel's generational write model advanced."
+      "Description": "The number of times the maintenance lock was released."
     },
     {
       "Id": null,
-      "Title": "kernel_mvcc_work_last_advance",
+      "Title": "kernel_metadata_store_checkpoint",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "min(kernel_mvcc_work_last_advance)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(kernel_mvcc_work_last_advance)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(kernel_mvcc_work_last_advance)",
-              "Label": "mean"
+              "Value": "sum(kernel_metadata_store_checkpoint)",
+              "Label": "sum_of_deltas"
             }
           ],
-          "Where": "kernel_mvcc_work_last_advance is not null",
+          "Where": "kernel_metadata_store_checkpoint is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -3003,7 +3522,7 @@
             "Type": "Line",
             "LineFillToZeroY": true,
             "LineShowMarkers": false,
-            "BarOverlaySum": false,
+            "BarOverlaySum": true,
             "UseLogarithmicScale": false,
             "SuppressLegend": true,
             "Palette": "Default"
@@ -3017,30 +3536,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The last generation that deferred work was advanced to."
+      "Description": "The metadata store was checkpointed."
     },
     {
       "Id": null,
-      "Title": "kernel_mvcc_work_last_defer",
+      "Title": "kernel_metadata_store_create",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "min(kernel_mvcc_work_last_defer)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(kernel_mvcc_work_last_defer)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(kernel_mvcc_work_last_defer)",
-              "Label": "mean"
+              "Value": "sum(kernel_metadata_store_create)",
+              "Label": "sum_of_deltas"
             }
           ],
-          "Where": "kernel_mvcc_work_last_defer is not null",
+          "Where": "kernel_metadata_store_create is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -3049,7 +3561,7 @@
             "Type": "Line",
             "LineFillToZeroY": true,
             "LineShowMarkers": false,
-            "BarOverlaySum": false,
+            "BarOverlaySum": true,
             "UseLogarithmicScale": false,
             "SuppressLegend": true,
             "Palette": "Default"
@@ -3063,7 +3575,514 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The last generation work was deferred until."
+      "Description": "The metadata store was created."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_metadata_store_open",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_metadata_store_open)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_metadata_store_open is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The metadata store was opened."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_mvcc_data_generations_advanced",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_mvcc_data_generations_advanced)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_mvcc_data_generations_advanced is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of generational models advanced through."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_mvcc_data_generations_created",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_mvcc_data_generations_created)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_mvcc_data_generations_created is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of generational models created."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_operations",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_operations)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_operations is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The kernel executed a set of operations."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_operations_write_metadata",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_operations_write_metadata)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_operations_write_metadata is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The kernel wrote to metadata while executing operations."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_sync_lock_acquired",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_sync_lock_acquired)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_sync_lock_acquired is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of times the sync lock was acquired."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_sync_lock_released",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_sync_lock_released)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_sync_lock_released is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of times the sync lock was released."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_write_lock_acquired",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_write_lock_acquired)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_write_lock_acquired is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of times the write lock was acquired."
+    },
+    {
+      "Id": null,
+      "Title": "kernel_write_lock_released",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(kernel_write_lock_released)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "kernel_write_lock_released is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of times the write lock was released."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_checkpoint",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_checkpoint)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_checkpoint is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store was checkpointed."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_create",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_create)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_create is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store was created."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_open",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_open)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_open is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store was opened."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_read",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_read)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_read is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store was read."
     },
     {
       "Id": null,
@@ -3072,6 +4091,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(keyvalues_read_truncated)",
@@ -3101,7 +4121,280 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "A metadata read operation encountered corrupt data and returned early."
+      "Description": "A key values read operation encountered corrupt data and returned early."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_transaction_abort",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_transaction_abort)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_transaction_abort is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store transaction was aborted."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_transaction_begin",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_transaction_begin)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_transaction_begin is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store transaction was started."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_transaction_commit",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_transaction_commit)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_transaction_commit is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store transaction was committed."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_transaction_remove",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_transaction_remove)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_transaction_remove is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store transaction removed a value."
+    },
+    {
+      "Id": null,
+      "Title": "keyvalues_transaction_set",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(keyvalues_transaction_set)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "keyvalues_transaction_set is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A key value store transaction set a value."
+    },
+    {
+      "Id": null,
+      "Title": "lead_transaction_begin",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(lead_transaction_begin)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "lead_transaction_begin is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A `LeadTransaction` was created."
+    },
+    {
+      "Id": null,
+      "Title": "lead_transaction_complete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(lead_transaction_complete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "lead_transaction_complete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A `LeadTransaction` was completed."
     },
     {
       "Id": null,
@@ -3110,6 +4403,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(lead_transaction_dirty_complete)",
@@ -3148,6 +4442,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(maintenance_transaction_advance_generation)",
@@ -3186,6 +4481,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(maintenance_transaction_begin)",
@@ -3224,6 +4520,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(maintenance_transaction_complete)",
@@ -3262,6 +4559,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(maintenance_transaction_dirty_complete)",
@@ -3300,6 +4598,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(managed_thread_pool_threads)",
@@ -3341,407 +4640,12 @@
     },
     {
       "Id": null,
-      "Title": "memory_controller_enter_safe_mode",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_controller_enter_safe_mode)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_controller_enter_safe_mode is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The memory controller signaled that consumers should enter safe mode."
-    },
-    {
-      "Id": null,
-      "Title": "memory_controller_extend_safe_mode",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_controller_extend_safe_mode)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_controller_extend_safe_mode is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The memory controller extended the duration of safe mode."
-    },
-    {
-      "Id": null,
-      "Title": "memory_controller_leave_safe_mode",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_controller_leave_safe_mode)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_controller_leave_safe_mode is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The memory controller signaled that consumers should leave safe mode."
-    },
-    {
-      "Id": null,
-      "Title": "memory_controller_release_tracked_memory",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_controller_release_tracked_memory)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_controller_release_tracked_memory is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The memory controller signaled that consumers should release tracked memory."
-    },
-    {
-      "Id": null,
-      "Title": "memory_monitor_last_danger_tracked_bytes",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "min(memory_monitor_last_danger_tracked_bytes)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(memory_monitor_last_danger_tracked_bytes)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(memory_monitor_last_danger_tracked_bytes)",
-              "Label": "mean"
-            }
-          ],
-          "Where": "memory_monitor_last_danger_tracked_bytes is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "Tracked bytes detected at the last danger status event."
-    },
-    {
-      "Id": null,
-      "Title": "memory_monitor_status_critical",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_monitor_status_critical)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_monitor_status_critical is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "A memory check resulted in critical memory status."
-    },
-    {
-      "Id": null,
-      "Title": "memory_monitor_status_danger",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_monitor_status_danger)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_monitor_status_danger is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "A memory check resulted in normal memory status."
-    },
-    {
-      "Id": null,
-      "Title": "memory_monitor_status_normal",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_monitor_status_normal)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_monitor_status_normal is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "A memory check resulted in normal memory status."
-    },
-    {
-      "Id": null,
-      "Title": "memory_monitor_terminate_panic",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(memory_monitor_terminate_panic)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "memory_monitor_terminate_panic is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Reds"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The memory monitor thread panicked and was terminated."
-    },
-    {
-      "Id": null,
-      "Title": "memory_platform_last_utilization",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "min(memory_platform_last_utilization)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(memory_platform_last_utilization)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(memory_platform_last_utilization)",
-              "Label": "mean"
-            }
-          ],
-          "Where": "memory_platform_last_utilization is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "Platform-specific system memory utilization."
-    },
-    {
-      "Id": null,
       "Title": "memory_platform_limit_bytes",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(memory_platform_limit_bytes)",
@@ -3788,6 +4692,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(memory_platform_sample_failed)",
@@ -3826,6 +4731,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(memory_platform_total_bytes)",
@@ -3872,6 +4778,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "last(net_active_inbound_transport_connections)",
@@ -3910,6 +4817,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "last(net_active_outbound_transport_connections)",
@@ -3948,6 +4856,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_bytes_received)",
@@ -3986,6 +4895,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_bytes_sent)",
@@ -4024,6 +4934,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_completed)",
@@ -4062,6 +4973,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_completed_err)",
@@ -4100,6 +5012,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_established)",
@@ -4138,6 +5051,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_not_established_err)",
@@ -4176,6 +5090,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_not_established_invalid_key)",
@@ -4214,6 +5129,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_not_established_unknown_protocol)",
@@ -4252,6 +5168,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_not_established_version)",
@@ -4290,6 +5207,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_socket_accepted)",
@@ -4328,6 +5246,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_incoming_socket_not_accepted)",
@@ -4366,6 +5285,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_recv_err)",
@@ -4404,6 +5324,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_recv_timeout)",
@@ -4442,6 +5363,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_send_err)",
@@ -4480,6 +5402,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_send_timeout)",
@@ -4518,6 +5441,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_service_restart_err)",
@@ -4556,6 +5480,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_service_restart_panic)",
@@ -4594,6 +5519,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_task_err)",
@@ -4632,6 +5558,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(net_task_panic)",
@@ -4670,6 +5597,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(params_write_abort)",
@@ -4708,6 +5636,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(params_write_begin)",
@@ -4746,6 +5675,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(params_write_commit)",
@@ -4784,6 +5714,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(params_write_set_value)",
@@ -4822,6 +5753,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_delete_records)",
@@ -4860,6 +5792,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_execute_procedure)",
@@ -4898,6 +5831,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_execute_procedure_partition)",
@@ -4936,6 +5870,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_port)",
@@ -4974,6 +5909,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_read_partition)",
@@ -5012,6 +5948,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_read_records)",
@@ -5050,6 +5987,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(prepare_input_scalar)",
@@ -5088,6 +6026,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_execute_begin)",
@@ -5126,6 +6065,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_execute_end_cancel)",
@@ -5164,6 +6104,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_execute_end_done)",
@@ -5202,6 +6143,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_execute_end_partial)",
@@ -5240,6 +6182,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_execute_resume_error)",
@@ -5278,6 +6221,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "max(query_parser_expr_depth_max)",
@@ -5316,6 +6260,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_parser_expr_depth_overflow)",
@@ -5354,6 +6299,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(query_working_set_limit_exceeded)",
@@ -5392,6 +6338,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(read_transaction_begin)",
@@ -5430,6 +6377,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(read_transaction_begin_fork)",
@@ -5468,6 +6416,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(read_transaction_complete)",
@@ -5506,6 +6455,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(read_transaction_dirty_complete)",
@@ -5544,6 +6494,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(reader_begin)",
@@ -5577,11 +6528,51 @@
     },
     {
       "Id": null,
+      "Title": "reader_column_span_read",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(reader_column_span_read)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "reader_column_span_read is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A column span was included in a read."
+    },
+    {
+      "Id": null,
       "Title": "reader_complete",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(reader_complete)",
@@ -5615,18 +6606,19 @@
     },
     {
       "Id": null,
-      "Title": "reader_include_ingest_buf",
+      "Title": "reader_ingest_buf_read",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(reader_include_ingest_buf)",
+              "Value": "sum(reader_ingest_buf_read)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "reader_include_ingest_buf is not null",
+          "Where": "reader_ingest_buf_read is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -5653,18 +6645,19 @@
     },
     {
       "Id": null,
-      "Title": "reader_include_region",
+      "Title": "reader_read_bytes_compressed",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(reader_include_region)",
+              "Value": "sum(reader_read_bytes_compressed)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "reader_include_region is not null",
+          "Where": "reader_read_bytes_compressed is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -5687,22 +6680,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "A region was read."
+      "Description": "The number of compressed bytes read."
     },
     {
       "Id": null,
-      "Title": "reader_include_stable_span",
+      "Title": "reader_read_bytes_uncompressed",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(reader_include_stable_span)",
+              "Value": "sum(reader_read_bytes_uncompressed)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "reader_include_stable_span is not null",
+          "Where": "reader_read_bytes_uncompressed is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -5725,7 +6719,124 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "A stable span was included in a read region."
+      "Description": "The number of uncompressed bytes read."
+    },
+    {
+      "Id": null,
+      "Title": "reader_read_jz",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(reader_read_jz)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "reader_read_jz is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of JSON-aware compressed records read."
+    },
+    {
+      "Id": null,
+      "Title": "reader_read_snappy",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(reader_read_snappy)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "reader_read_snappy is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of snappy compressed records read."
+    },
+    {
+      "Id": null,
+      "Title": "reader_read_uncompressed",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(reader_read_uncompressed)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "reader_read_uncompressed is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "The number of uncompressed records read."
     },
     {
       "Id": null,
@@ -5734,6 +6845,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(reader_stable_span_corrupted_index_set)",
@@ -5772,6 +6884,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(reader_stable_span_no_index_set)",
@@ -5805,18 +6918,58 @@
     },
     {
       "Id": null,
-      "Title": "reader_stable_span_skip",
+      "Title": "reader_stable_span_region_read",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(reader_stable_span_skip)",
+              "Value": "sum(reader_stable_span_region_read)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "reader_stable_span_skip is not null",
+          "Where": "reader_stable_span_region_read is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A stable span was included in a read region."
+    },
+    {
+      "Id": null,
+      "Title": "reader_stable_span_region_skip",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(reader_stable_span_region_skip)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "reader_stable_span_region_skip is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -5843,11 +6996,90 @@
     },
     {
       "Id": null,
+      "Title": "replication_apply_column_span_delete",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_column_span_delete)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_column_span_delete is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication deleted a column span."
+    },
+    {
+      "Id": null,
+      "Title": "replication_apply_column_span_write_bytes",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_apply_column_span_write_bytes)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_apply_column_span_write_bytes is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication wrote to a column span."
+    },
+    {
+      "Id": null,
       "Title": "replication_apply_index_set_delete",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_index_set_delete)",
@@ -5886,6 +7118,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_index_set_write_bytes)",
@@ -5924,6 +7157,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_ingest_buf_delete)",
@@ -5962,6 +7196,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_ingest_buf_write_bytes)",
@@ -6000,6 +7235,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_stable_span_delete)",
@@ -6038,6 +7274,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_stable_span_update_metadata)",
@@ -6076,6 +7313,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_apply_stable_span_write_bytes)",
@@ -6109,18 +7347,136 @@
     },
     {
       "Id": null,
-      "Title": "replication_full_sync",
+      "Title": "replication_follower_abort",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(replication_full_sync)",
+              "Value": "sum(replication_follower_abort)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "replication_full_sync is not null",
+          "Where": "replication_follower_abort is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was aborted."
+    },
+    {
+      "Id": null,
+      "Title": "replication_follower_begin",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_follower_begin)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_follower_begin is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was started."
+    },
+    {
+      "Id": null,
+      "Title": "replication_follower_commit",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_follower_commit)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_follower_commit is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was committed."
+    },
+    {
+      "Id": null,
+      "Title": "replication_follower_full_sync",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_follower_full_sync)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_follower_full_sync is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -6147,11 +7503,207 @@
     },
     {
       "Id": null,
+      "Title": "replication_leader_abort",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_leader_abort)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_leader_abort is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was aborted."
+    },
+    {
+      "Id": null,
+      "Title": "replication_leader_begin",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_leader_begin)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_leader_begin is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was started."
+    },
+    {
+      "Id": null,
+      "Title": "replication_leader_commit",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_leader_commit)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_leader_commit is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication exchange was committed."
+    },
+    {
+      "Id": null,
+      "Title": "replication_leader_full_sync",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_leader_full_sync)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_leader_full_sync is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication requires a full-sync."
+    },
+    {
+      "Id": null,
+      "Title": "replication_use_checkpointed_column_span",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(replication_use_checkpointed_column_span)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "replication_use_checkpointed_column_span is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A replication used a checkpointed stable span."
+    },
+    {
+      "Id": null,
       "Title": "replication_use_checkpointed_index_set",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_use_checkpointed_index_set)",
@@ -6190,6 +7742,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_use_checkpointed_ingest_buf)",
@@ -6228,6 +7781,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(replication_use_checkpointed_stable_span)",
@@ -6266,6 +7820,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(rowset_cache_discarded_work_bytes)",
@@ -6304,6 +7859,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(rowset_cache_gc)",
@@ -6342,6 +7898,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(rowset_cache_get_hit)",
@@ -6380,6 +7937,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(rowset_cache_get_miss)",
@@ -6418,6 +7976,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(rowset_cache_set)",
@@ -6456,6 +8015,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(rowset_cache_size_bytes)",
@@ -6502,6 +8062,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(rowset_cache_size_entries)",
@@ -6548,6 +8109,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(snapshots_client_exchange_firehose)",
@@ -6586,6 +8148,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(snapshots_client_exchange_request_response)",
@@ -6624,6 +8187,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "min(snapshots_compression_percentage)",
@@ -6670,6 +8234,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(snapshots_server_exchange_firehose)",
@@ -6708,6 +8273,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(snapshots_server_exchange_request_response)",
@@ -6746,6 +8312,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(stable_span_create)",
@@ -6779,57 +8346,12 @@
     },
     {
       "Id": null,
-      "Title": "stable_span_last_seek_probes",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "min(stable_span_last_seek_probes)",
-              "Label": "min"
-            },
-            {
-              "Value": "max(stable_span_last_seek_probes)",
-              "Label": "max"
-            },
-            {
-              "Value": "mean(stable_span_last_seek_probes)",
-              "Label": "mean"
-            }
-          ],
-          "Where": "stable_span_last_seek_probes is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The number of pages probed in the last stable span seek (`stable_span::seek`)."
-    },
-    {
-      "Id": null,
       "Title": "stable_span_quarantine",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(stable_span_quarantine)",
@@ -6868,6 +8390,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(stable_span_read)",
@@ -6901,11 +8424,51 @@
     },
     {
       "Id": null,
+      "Title": "stable_span_read_sparse",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(stable_span_read_sparse)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "stable_span_read_sparse is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A stable span read operation began with a sparse index (`StableSpanReader::begin()`)."
+    },
+    {
+      "Id": null,
       "Title": "stable_span_remove",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(stable_span_remove)",
@@ -6939,18 +8502,19 @@
     },
     {
       "Id": null,
-      "Title": "stable_span_seek",
+      "Title": "store_become_follower",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(stable_span_seek)",
+              "Value": "sum(store_become_follower)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "stable_span_seek is not null",
+          "Where": "store_become_follower is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -6973,22 +8537,23 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "The iteration starting position within a stable span required seeking within the span\n    beyond the first or last record (`stable_span::seek`)."
+      "Description": "The store was configured as a follower node."
     },
     {
       "Id": null,
-      "Title": "stable_span_sparse_read",
+      "Title": "store_become_leader",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
-              "Value": "sum(stable_span_sparse_read)",
+              "Value": "sum(store_become_leader)",
               "Label": "sum_of_deltas"
             }
           ],
-          "Where": "stable_span_sparse_read is not null",
+          "Where": "store_become_leader is not null",
           "SignalExpression": null,
           "GroupBy": [
             "@Resource.seq.node.name"
@@ -7011,7 +8576,7 @@
         "WidthColumns": 3,
         "HeightRows": 1
       },
-      "Description": "A stable span read operation began with a sparse index (`StableSpanReader::begin()`)."
+      "Description": "The store was configured as a leader node."
     },
     {
       "Id": null,
@@ -7020,6 +8585,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(store_become_leader_callback_failed)",
@@ -7058,6 +8624,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(store_close)",
@@ -7096,6 +8663,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(store_create)",
@@ -7129,49 +8697,12 @@
     },
     {
       "Id": null,
-      "Title": "store_file_quarantine",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(store_file_quarantine)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "store_file_quarantine is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "A file was quarantined."
-    },
-    {
-      "Id": null,
       "Title": "store_open",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(store_open)",
@@ -7205,163 +8736,12 @@
     },
     {
       "Id": null,
-      "Title": "sync_lock_acquisition",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(sync_lock_acquisition)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "sync_lock_acquisition is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The number of times the sync lock was acquired."
-    },
-    {
-      "Id": null,
-      "Title": "sync_lock_total_wait_time_ns",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(sync_lock_total_wait_time_ns)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "sync_lock_total_wait_time_ns is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The time spent blocking while waiting for the sync lock."
-    },
-    {
-      "Id": null,
-      "Title": "sync_lock_worst_case_wait_time_ns",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "max(sync_lock_worst_case_wait_time_ns)",
-              "Label": "max"
-            }
-          ],
-          "Where": "sync_lock_worst_case_wait_time_ns is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The time spent blocking while waiting for the sync lock."
-    },
-    {
-      "Id": null,
-      "Title": "thread_pool_idle_no_instruction",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(thread_pool_idle_no_instruction)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "thread_pool_idle_no_instruction is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The thread pool idle callback ran but no work was found."
-    },
-    {
-      "Id": null,
       "Title": "thread_pool_idle_run_immediate",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_idle_run_immediate)",
@@ -7400,6 +8780,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_item_complete)",
@@ -7438,6 +8819,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_item_failed)",
@@ -7476,6 +8858,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_item_panic)",
@@ -7514,6 +8897,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_run_enqueue)",
@@ -7552,6 +8936,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_thread_deprioritize)",
@@ -7590,6 +8975,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(thread_pool_thread_start)",
@@ -7628,6 +9014,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(truncate_complete)",
@@ -7661,11 +9048,129 @@
     },
     {
       "Id": null,
+      "Title": "truncate_ingest_buf_remove",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(truncate_ingest_buf_remove)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "truncate_ingest_buf_remove is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A truncate operation removed an ingest buffer (`store::truncate`)."
+    },
+    {
+      "Id": null,
+      "Title": "truncate_stable_span_remove",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(truncate_stable_span_remove)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "truncate_stable_span_remove is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A truncate operation removed a stable span (`store::truncate`)."
+    },
+    {
+      "Id": null,
+      "Title": "truncate_stable_span_resize",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(truncate_stable_span_resize)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "truncate_stable_span_resize is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "A truncate operation resized a stable span (`store::truncate`)."
+    },
+    {
+      "Id": null,
       "Title": "vertex_execute_local",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertex_execute_local)",
@@ -7704,6 +9209,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertex_execute_remote)",
@@ -7742,6 +9248,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertex_remote_receive)",
@@ -7780,6 +9287,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertex_remote_send)",
@@ -7818,6 +9326,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_client_empty_exchange)",
@@ -7856,6 +9365,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_client_file_add)",
@@ -7894,6 +9404,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_client_file_remove)",
@@ -7932,6 +9443,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_client_file_update)",
@@ -7970,6 +9482,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_client_task_cancel_by_server)",
@@ -8008,6 +9521,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_server_empty_exchange)",
@@ -8046,6 +9560,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_server_file_add)",
@@ -8084,6 +9599,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_server_file_remove)",
@@ -8122,6 +9638,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_server_file_update)",
@@ -8160,6 +9677,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(vertexes_server_task_cancel_by_client)",
@@ -8193,49 +9711,12 @@
     },
     {
       "Id": null,
-      "Title": "vertexes_server_task_cancel_by_server",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(vertexes_server_task_cancel_by_server)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "vertexes_server_task_cancel_by_server is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "A vertex could not be sent to a remote node so its task was cancelled."
-    },
-    {
-      "Id": null,
       "Title": "worker_sample_canceled",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(worker_sample_canceled)",
@@ -8274,6 +9755,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(worker_thread_deprioritize)",
@@ -8307,125 +9789,12 @@
     },
     {
       "Id": null,
-      "Title": "write_lock_acquisition",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(write_lock_acquisition)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "write_lock_acquisition is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The number of times the write lock was acquired."
-    },
-    {
-      "Id": null,
-      "Title": "write_lock_total_wait_time_ns",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "sum(write_lock_total_wait_time_ns)",
-              "Label": "sum_of_deltas"
-            }
-          ],
-          "Where": "write_lock_total_wait_time_ns is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": true,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The time spent blocking while waiting for the write lock."
-    },
-    {
-      "Id": null,
-      "Title": "write_lock_worst_case_wait_time_ns",
-      "SignalExpression": null,
-      "Queries": [
-        {
-          "Id": null,
-          "Measurements": [
-            {
-              "Value": "max(write_lock_worst_case_wait_time_ns)",
-              "Label": "max"
-            }
-          ],
-          "Where": "write_lock_worst_case_wait_time_ns is not null",
-          "SignalExpression": null,
-          "GroupBy": [
-            "@Resource.seq.node.name"
-          ],
-          "DisplayStyle": {
-            "Type": "Line",
-            "LineFillToZeroY": true,
-            "LineShowMarkers": false,
-            "BarOverlaySum": false,
-            "UseLogarithmicScale": false,
-            "SuppressLegend": true,
-            "Palette": "Default"
-          },
-          "Having": null,
-          "OrderBy": [],
-          "Limit": null
-        }
-      ],
-      "DisplayStyle": {
-        "WidthColumns": 3,
-        "HeightRows": 1
-      },
-      "Description": "The time spent blocking while waiting for the write lock."
-    },
-    {
-      "Id": null,
       "Title": "write_transaction_begin",
       "SignalExpression": null,
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(write_transaction_begin)",
@@ -8464,6 +9833,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(write_transaction_complete)",
@@ -8502,6 +9872,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(write_transaction_dirty_complete)",
@@ -8540,6 +9911,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(writer_abort)",
@@ -8578,6 +9950,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(writer_begin)",
@@ -8616,6 +9989,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(writer_commit)",
@@ -8654,6 +10028,7 @@
       "Queries": [
         {
           "Id": null,
+          "DataSource": "Metrics",
           "Measurements": [
             {
               "Value": "sum(writer_commit_multiple_bufs)",
@@ -8684,6 +10059,123 @@
         "HeightRows": 1
       },
       "Description": "A writer committed multiple ingest buffers (`store::writer`)."
+    },
+    {
+      "Id": null,
+      "Title": "writer_ingest_buf_abort",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(writer_ingest_buf_abort)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "writer_ingest_buf_abort is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "An ingest buffer was aborted in a writer."
+    },
+    {
+      "Id": null,
+      "Title": "writer_ingest_buf_commit",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(writer_ingest_buf_commit)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "writer_ingest_buf_commit is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "An ingest buffer was committed in a writer."
+    },
+    {
+      "Id": null,
+      "Title": "writer_ingest_buf_write",
+      "SignalExpression": null,
+      "Queries": [
+        {
+          "Id": null,
+          "DataSource": "Metrics",
+          "Measurements": [
+            {
+              "Value": "sum(writer_ingest_buf_write)",
+              "Label": "sum_of_deltas"
+            }
+          ],
+          "Where": "writer_ingest_buf_write is not null",
+          "SignalExpression": null,
+          "GroupBy": [
+            "@Resource.seq.node.name"
+          ],
+          "DisplayStyle": {
+            "Type": "Line",
+            "LineFillToZeroY": true,
+            "LineShowMarkers": false,
+            "BarOverlaySum": true,
+            "UseLogarithmicScale": false,
+            "SuppressLegend": true,
+            "Palette": "Default"
+          },
+          "Having": null,
+          "OrderBy": [],
+          "Limit": null
+        }
+      ],
+      "DisplayStyle": {
+        "WidthColumns": 3,
+        "HeightRows": 1
+      },
+      "Description": "An ingest buffer was committed in a writer."
     }
   ],
   "$entity": "dashboard"
